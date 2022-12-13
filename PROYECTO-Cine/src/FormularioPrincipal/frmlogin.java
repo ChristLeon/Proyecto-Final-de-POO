@@ -6,6 +6,7 @@ import FormulariosCompra.panel_cliente;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import misFormularios.menuPrincipal;
 
 public class frmlogin extends javax.swing.JFrame {
     frmregistro fr=new frmregistro();
@@ -42,7 +43,7 @@ public class frmlogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(86, 229, 219));
+        jPanel1.setBackground(new java.awt.Color(193, 41, 41));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
@@ -149,7 +150,7 @@ public class frmlogin extends javax.swing.JFrame {
                     if(useremail.equalsIgnoreCase(usuario) && userclave.equalsIgnoreCase(pass)){
                         JOptionPane.showMessageDialog(null,"USUARIO Y CLAVE VÁLIDAS");
                         dispose();
-                        panel_cliente pc=new panel_cliente();
+                        menuPrincipal pc=new menuPrincipal();
                         pc.setVisible(true);
                     }
                 }

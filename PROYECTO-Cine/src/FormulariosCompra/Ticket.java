@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author INSPIRON 15
  */
+
 public final class Ticket extends javax.swing.JFrame {
 
     /**
@@ -33,13 +34,13 @@ public final class Ticket extends javax.swing.JFrame {
     
     void limpiar() {
         ImageIcon i = new ImageIcon("");
-        Menu.jLabelPelicula.setIcon(i);
-        Menu.jTextFieldCantidadDeBoletosAdultos.setText("");
-        Menu.buttonGroup1.clearSelection();
-        Menu.jComboBoxHora.setSelectedIndex(0);
-        Menu.jComboBoxPeliculas.setSelectedIndex(0);
-        Menu.jTextFieldCantidadDeBoletosNiños.setVisible(true);
-        Menu.jTextFieldCantidadDeBoletosNiños.setText("");
+        Boleteria.jLabelPelicula.setIcon(i);
+        Boleteria.jTextFieldCantidadDeBoletosAdultos.setText("");
+        Boleteria.buttonGroup1.clearSelection();
+        Boleteria.jComboBoxHora.setSelectedIndex(0);
+        Boleteria.jComboBoxPeliculas.setSelectedIndex(0);
+        Boleteria.jTextFieldCantidadDeBoletosNiños.setVisible(true);
+        Boleteria.jTextFieldCantidadDeBoletosNiños.setText("");
 
     }
 
@@ -87,11 +88,11 @@ public final class Ticket extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 26, -1, -1));
 
         jLabelHora.setFont(new java.awt.Font("Ubuntu Condensed", 1, 14)); // NOI18N
-        jPanel1.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 56, 111, 21));
+        jPanel1.add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 111, 21));
 
         jLabelFecha.setBackground(new java.awt.Color(255, 255, 255));
         jLabelFecha.setFont(new java.awt.Font("Ubuntu Condensed", 1, 14)); // NOI18N
-        jPanel1.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 56, 111, 21));
+        jPanel1.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 160, 21));
 
         jLabel7.setFont(new java.awt.Font("Ubuntu Condensed", 1, 14)); // NOI18N
         jLabel7.setText("Pelicula................");

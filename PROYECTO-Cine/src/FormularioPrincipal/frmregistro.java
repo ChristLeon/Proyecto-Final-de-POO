@@ -36,7 +36,7 @@ public class frmregistro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(86, 229, 219));
+        jPanel1.setBackground(new java.awt.Color(193, 41, 41));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 24)); // NOI18N

@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class frmReseñas extends javax.swing.JFrame {
+public class frmReseñas extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form frmReseñas
@@ -28,11 +28,17 @@ public class frmReseñas extends javax.swing.JFrame {
     private void initComponents() {
 
         cbxPeliculas = new javax.swing.JComboBox<>();
-        lblDescripcion = new javax.swing.JLabel();
         btnSleccionar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lblDescripcion = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(197, 175, 175));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(32767, 32767));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbxPeliculas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbxPeliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MINIONS - EL ORIGEN DE GRU", "THOR AMOR Y TRUENO", "CIUDAD PERDIDA", "SPIDERMAN - SIN CAMINO A CASA" }));
@@ -41,8 +47,7 @@ public class frmReseñas extends javax.swing.JFrame {
                 cbxPeliculasActionPerformed(evt);
             }
         });
-
-        lblDescripcion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        getContentPane().add(cbxPeliculas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 335, 30));
 
         btnSleccionar.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         btnSleccionar.setText("Seleccionar");
@@ -51,41 +56,41 @@ public class frmReseñas extends javax.swing.JFrame {
                 btnSleccionarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 146, 43));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Escoger una pelicula");
+        jLabel1.setText("ELIGE LA PELICULA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 250, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE))
-                            .addComponent(cbxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(btnSleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+        lblDescripcion.setBackground(new java.awt.Color(197, 175, 175));
+        lblDescripcion.setColumns(20);
+        lblDescripcion.setRows(5);
+        jScrollPane1.setViewportView(lblDescripcion);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 598, 199));
+
+        jPanel1.setBackground(new java.awt.Color(197, 175, 175));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cinta.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(660, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
-                .addComponent(cbxPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnSleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(83, 83, 83))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,23 +105,23 @@ public class frmReseñas extends javax.swing.JFrame {
                 int p_posicion=0;
                 p_posicion=cbxPeliculas.getSelectedIndex();
                 if (p_posicion==0) 
-                    lblDescripcion.setText("En los años 70, Gru crece siendo un gran admirador de \"Los salvajes seis\", un supergrupo de villanos."+
-                            "Para demostrarles que puede ser malvado, Gru idea un plan con la esperanza de formar parte"+
-                            "de la banda. Por suerte, cuenta con la ayuda de sus fieles seguidores, los Minions,"+
-                            "siempre dispuestos a sembrar el caos.");
+                    lblDescripcion.setText("En los años 70, Gru crece siendo un gran admirador de \"Los salvajes seis\", un supergrupo de villanos\n"+
+                            "Para demostrarles que puede ser malvado, Gru idea un plan con la esperanza de formar parte\n"+
+                            "de la banda. Por suerte, cuenta con la ayuda de sus fieles seguidores, los Minions,\n"+
+                            "siempre dispuestos a sembrar el caos.\n");
                 else if(p_posicion==1)
-                    lblDescripcion.setText("Thor está buscando la paz interior, pero la irrupción de Gorr, el asesino de dioses,"+
-                            " le obliga a volver al combate. Thor recluta a la Reina Valkiria, Korg y su exnovia, "
-                            + "Jane Foster, para que lo ayuden a evitar la extinción de los dioses.");
+                    lblDescripcion.setText("Thor está buscando la paz interior, pero la irrupción de Gorr, el asesino de dioses,\n"+
+                            " le obliga a volver al combate. Thor recluta a la Reina Valkiria, Korg y su exnovia, \n"
+                            + "Jane Foster, para que lo ayuden a evitar la extinción de los dioses.\n");
                             else if(p_posicion==2)
-                                    lblDescripcion.setText("La escritora solitaria Loretta Sage escribe sobre lugares exóticos "
-                                            + "en sus populares novelas de aventuras con un atractivo modelo de portada, Alan."
-                                            + " Mientras está de gira promocionando su nuevo libro, es secuestrada por un excéntrico"
-                                            + " multimillonario.");
+                                    lblDescripcion.setText("La escritora solitaria Loretta Sage escribe sobre lugares exóticos \n"
+                                            + "en sus populares novelas de aventuras con un atractivo modelo de portada, Alan.\n"
+                                            + " Mientras está de gira promocionando su nuevo libro, es secuestrada por un excéntrico\n"
+                                            + " multimillonario.\n");
                                     else if (p_posicion==3)
-                                            lblDescripcion.setText("Tras descubrirse la identidad secreta de Peter Parker como Spider-Man,"
-                                                    + " la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño"
-                                                    + " para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.");
+                                            lblDescripcion.setText("Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida\n"
+                                                    + " del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Strange\n"
+                                                    + " para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.\n");
             
     }//GEN-LAST:event_btnSleccionarActionPerformed
 
@@ -159,6 +164,9 @@ public class frmReseñas extends javax.swing.JFrame {
     private javax.swing.JButton btnSleccionar;
     private javax.swing.JComboBox<String> cbxPeliculas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea lblDescripcion;
     // End of variables declaration//GEN-END:variables
 }
